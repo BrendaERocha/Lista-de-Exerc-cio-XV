@@ -1,0 +1,29 @@
+public class Main {
+
+    public static void main(String[] args) {
+        GerenciadorContas gerenciador = GerenciadorContas.getInstance();
+
+        // Criação de contas
+        gerenciador.criarConta("João Silva", 1000.0, 500.0);
+        gerenciador.criarConta("Maria Gomes", 2500.0, 800.0);
+
+        // Consultas de saldo
+        System.out.println("Saldo João Silva: " + gerenciador.consultarSaldo("João Silva"));
+        System.out.println("Saldo Maria Gomes: " + gerenciador.consultarSaldo("Maria Gomes"));
+
+        // Depósitos
+        gerenciador.depositar("João Silva", 200.0);
+        gerenciador.depositar("Maria Gomes", 500.0);
+
+        // Saques
+        gerenciador.sacar("João Silva", 150.0);
+        gerenciador.sacar("Maria Gomes", 300.0);
+
+        // Extrato
+        System.out.println("\nExtrato João Silva:");
+        gerenciador.exibirExtrato("João Silva");
+
+        System.out.println("\nExtrato Maria Gomes:");
+        gerenciador.exibirExtrato("Maria Gomes");
+    }
+}
