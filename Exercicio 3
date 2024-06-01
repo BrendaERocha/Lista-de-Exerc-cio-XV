@@ -1,0 +1,25 @@
+public class Main {
+
+    public static void main(String[] args) {
+        Pedido pedido = new Pedido();
+
+        // Criação de itens do pedido
+        ItemPedido sanduiche = new Sanduiche("X-Burguer", 10.0);
+        ItemPedido batataFrita = new BatataFrita("Grande", 5.0);
+        ItemPedido refrigerante = new Refrigerante("Lata", 2.5);
+
+        // Adição de itens ao pedido
+        pedido.adicionarItem(sanduiche);
+        pedido.adicionarItem(batataFrita);
+        pedido.adicionarItem(refrigerante);
+
+        // Adição de extras
+        pedido.adicionarExtra(sanduiche, new Queijo("Cheddar", 1.0));
+        pedido.adicionarExtra(batataFrita, new Molho("Ketchup", 0.5));
+
+        // Cálculo e apresentação do pedido
+        System.out.println("Pedido:");
+        System.out.println(pedido.getDescricao());
+        System.out.println("Valor total: R$" + pedido.getPreco());
+    }
+}
