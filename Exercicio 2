@@ -1,0 +1,29 @@
+public class Main {
+
+    public static void main(String[] args) {
+        GerenciamentoProdutos gerenciador = new GerenciamentoProdutos();
+
+        // Cadastro de produtos
+        Produto produto1 = new Produto("Camisa", 50.0);
+        Produto produto2 = new Produto("Calça", 80.0);
+        gerenciador.cadastrarProduto(produto1);
+        gerenciador.cadastrarProduto(produto2);
+
+        // Cadastro de clientes e observação de preços
+        Cliente cliente1 = new Cliente("João Silva", "joaosilva@email.com");
+        cliente1.observarProduto(produto1);
+        Cliente cliente2 = new Cliente("Maria Gomes", "mariagomes@email.com");
+        cliente2.observarProduto(produto2);
+        cliente2.observarProduto(produto1);
+
+        // Atualização de preços e notificações
+        gerenciador.atualizarPreco(produto1, 60.0); // Notifica João Silva
+        gerenciador.atualizarPreco(produto2, 75.0); // Notifica Maria Gomes
+
+        // Remoção de observação
+        cliente2.desobservarProduto(produto1);
+
+        // Nova atualização de preço sem notificação para cliente2
+        gerenciador.atualizarPreco(produto1, 70.0);
+    }
+}
