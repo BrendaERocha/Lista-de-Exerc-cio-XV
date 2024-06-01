@@ -1,4 +1,4 @@
-# Lista-de-Exerc-cio-XV
+# Lista-de-Exercício-XV
 
 Atividade XIV: Implementando Padrões de Design em Java
 
